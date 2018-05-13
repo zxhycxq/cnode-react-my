@@ -13,7 +13,10 @@
   "rules": {
     "semi":[0],
     "linebreak-style": "off",
-    "react/jsx-filename-extension":[0]
+    "react/jsx-filename-extension":[0],
+    "space-before-blocks":[0],
+    "react/jsx-tag-spacing":[0],
+    "import/extensions":[0]
   }
 
 }

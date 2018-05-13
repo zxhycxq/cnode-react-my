@@ -8,19 +8,15 @@
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.config.client.js",
     "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.config.server.js",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
-    "dev:server": "cross-env NODE_ENV=development node server/server.js",
+    "dev:server": "nodemon server/server.js",
     "clear": "rimraf dist",
     "upload": "node build/upload.js",
     "build": "npm run clear && npm run build:client && npm run build:server",
-    "buil": "npm run clear && npm run buil:client && npm run buil:server",
-    "buil:client":"webpack --config build/webpack.config.client.js",
-    "buil:server":"webpack --config build/webpack.config.server.js",
     "deploy": "npm run build && npm run upload",
-    "lint": "eslint --ext .jsx --ext .js client/",
+    "lint": "eslint --ext .js --ext .jsx client/",
     "start": "cross-env NODE_ENV=production node server/server.js",
-    "star":"node server/server.js",
-    "lint":"eslint --ext .js --ext .jsx client/",
-    "procommit":"npm run lint"
+    "star": "node server/server.js",
+    "procommit": "npm run lint"
   },
   "author": "Jokcy",
   "license": "ISC",
@@ -83,11 +79,13 @@
     "memory-fs": "^0.4.1",
     "mfs": "^0.1.1",
     "name-all-modules-plugin": "^1.0.1",
+    "nodemon": "1.17.4",
     "qiniu": "^7.1.1",
     "react-hot-loader": "^3.1.3",
     "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack-dev-server": "^2.9.5",
+    "webpack-merge": "4.1.2"
   }
 }
