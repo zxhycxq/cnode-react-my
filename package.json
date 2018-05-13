@@ -12,9 +12,15 @@
     "clear": "rimraf dist",
     "upload": "node build/upload.js",
     "build": "npm run clear && npm run build:client && npm run build:server",
+    "buil": "npm run clear && npm run buil:client && npm run buil:server",
+    "buil:client":"webpack --config build/webpack.config.client.js",
+    "buil:server":"webpack --config build/webpack.config.server.js",
     "deploy": "npm run build && npm run upload",
     "lint": "eslint --ext .jsx --ext .js client/",
-    "start": "cross-env NODE_ENV=production node server/server.js"
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "star":"node server/server.js",
+    "lint":"eslint --ext .js --ext .jsx client/",
+    "procommit":"npm run lint"
   },
   "author": "Jokcy",
   "license": "ISC",
