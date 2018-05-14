@@ -21,7 +21,7 @@ const mfs = new MemoryFs
 
 const serverCompiler = webpack (serverConfig)
 serverCompiler.outputFileSystem = mfs
-let serverBundle
+let serverBundle,  createStoreMap;
 serverCompiler.watch ({}, (err, state) => {
   if (err) throw err
   state = state.toJson ()
@@ -38,6 +38,7 @@ serverCompiler.watch ({}, (err, state) => {
   m._compile (bundle,'server-entry.js')
   //需要指定名称
   serverBundle = m.exports.default
+  createStoreMap = m.exports.createStoreMap
 })
 
 module.exports = function (app) {
@@ -47,7 +48,9 @@ module.exports = function (app) {
   
   app.get ('*', function (req, res) {
      getTemplate().then(template=>{
-       const content=ReactDomServer.renderToString(serverBundle)
+       const routerContext={}
+       const app=serverBundle(createStoreMap(),routerContext,req.url)
+       const content=ReactDomServer.renderToString(app)
        res.send(template.replace('<!--app-->',content))
      })
   })

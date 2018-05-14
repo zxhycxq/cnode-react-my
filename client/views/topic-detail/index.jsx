@@ -6,7 +6,7 @@ export default class TopicDetail extends React.Component{
   }
   render() {
     return (
-      <div>topic-detail</div>
+      <div>俺是详情页-detail</div>
     )
   }
 }
