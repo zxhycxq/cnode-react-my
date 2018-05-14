@@ -6,6 +6,7 @@ import { Provider } from 'mobx-react'
 
 import App from './views/App.jsx';
 import AppState from './store/app-state';
+const initialListSize = window.__INITIAL_STATE__!!{} //eslint-disable-line
 // ReactDOM.render (<App/>, document.getElementById ('root'))
 const root = document.getElementById('root');
 const render = (Component) => {
