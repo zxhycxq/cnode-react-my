@@ -16,7 +16,27 @@
     "react/jsx-filename-extension":[0],
     "space-before-blocks":[0],
     "react/jsx-tag-spacing":[0],
-    "import/extensions":[0]
+    "import/extensions":[0],
+    "indent":[0],
+    "class-methods-use-this": "off",
+    "no-console": "off",
+    "no-multi-spaces": "off",
+    "no-trailing-spaces": "off",
+    "arrow-spacing": "off",
+    "jsx-indent": "off",
+    "no-spaced-func": "off",
+    "object-curly-spacing": "off",
+    "react/jsx-indent": "off",
+    "space-infix-ops": "off",
+    "space-in-parens": "off",
+    "arrow-body-style": "off",
+    "comma-dangle": "off",
+    "no-undef": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": "off"
   }
 
 }
